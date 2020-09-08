@@ -4,12 +4,6 @@ module.exports = function repeater(str, options = {}) {
 
   const defaultOptions = {repeatTimes: 1, separator: '+', addition: '', additionRepeatTimes: 1, additionSeparator: '|'};
 
-  console.log(new Array(options.repeatTimes || defaultOptions.repeatTimes)
-  .fill((str + new Array(options.additionRepeatTimes || defaultOptions.additionRepeatTimes)
-  .fill('addition' in options ? options.addition:  defaultOptions.addition)
-  .join(options.additionSeparator || defaultOptions.additionSeparator)))
-  .join(options.separator || defaultOptions.separator))
-
   return new Array(options.repeatTimes || defaultOptions.repeatTimes)
     .fill((str + new Array(options.additionRepeatTimes || defaultOptions.additionRepeatTimes)
     .fill('addition' in options ? options.addition + '' :  defaultOptions.addition)
